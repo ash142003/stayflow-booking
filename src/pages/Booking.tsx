@@ -118,7 +118,7 @@ export default function BookingPage() {
                       </Button>
                     </PopoverTrigger>
                     <PopoverContent className="w-auto p-0" align="start">
-                      <Calendar selected={field.value} onSelect={field.onChange} className={cn("p-3 pointer-events-auto")} initialFocus />
+                      <Calendar mode="single" selected={field.value} onSelect={field.onChange} className={cn("p-3 pointer-events-auto")} initialFocus />
                     </PopoverContent>
                   </Popover>
                   <FormMessage />
@@ -136,7 +136,7 @@ export default function BookingPage() {
                       </Button>
                     </PopoverTrigger>
                     <PopoverContent className="w-auto p-0" align="start">
-                      <Calendar selected={field.value} onSelect={field.onChange} className={cn("p-3 pointer-events-auto")} initialFocus />
+                      <Calendar mode="single" selected={field.value} onSelect={field.onChange} className={cn("p-3 pointer-events-auto")} initialFocus />
                     </PopoverContent>
                   </Popover>
                   <FormMessage />
