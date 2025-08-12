@@ -6,11 +6,11 @@ import { Button } from "@/components/ui/button";
 export default function RoomCard({ room }: { room: Room }) {
   return (
     <article className="group rounded-lg border overflow-hidden bg-card">
-      <Link to={`/rooms/₹{room.id}`} aria-label={`View ₹{room.name}`}>
+      <Link to={`/rooms/${room.id}`} aria-label={`View ${room.name}`}>
         <div className="aspect-[4/3] overflow-hidden">
           <img
             src={room.thumbnail}
-            alt={`₹{room.name} thumbnail`}
+            alt={`${room.name} thumbnail`}
             loading="lazy"
             className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
@@ -26,9 +26,9 @@ export default function RoomCard({ room }: { room: Room }) {
         </div>
         <p className="text-sm text-muted-foreground mt-1">{room.location} · {room.type}</p>
         <div className="mt-3 flex items-center justify-between">
-          <p className="text-base"><span className="font-semibold">₹{room.pricePerNight}</span> <span className="text-muted-foreground">/ night</span></p>
+          <p className="text-base"><span className="font-semibold">${room.pricePerNight}</span> <span className="text-muted-foreground">/ night</span></p>
           <Button asChild variant="secondary">
-            <Link to={`/booking?roomId=₹{room.id}`}>Book</Link>
+            <Link to={`/booking?roomId=${room.id}`}>Book</Link>
           </Button>
         </div>
       </div>

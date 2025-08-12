@@ -14,7 +14,7 @@ const NavItem = ({ to, label }: { to: string; label: string }) => (
   <NavLink
     to={to}
     className={({ isActive }) =>
-      `px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground ₹{
+      `px-3 py-2 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground ${
         isActive ? "text-primary" : "text-foreground/80"
       }`
     }

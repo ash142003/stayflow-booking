@@ -27,8 +27,8 @@ export default function RoomDetailPage() {
     <div className="container py-8">
       <Helmet>
         <title>{room.name} | ROOM BOOKING</title>
-        <meta name="description" content={`₹{room.name} in ₹{room.location}. Amenities: ₹{room.amenities.join(", ")}. Book now at the best price.`} />
-        <link rel="canonical" href={window.location.origin + `/rooms/₹{room.id}`} />
+        <meta name="description" content={`${room.name} in ${room.location}. Amenities: ${room.amenities.join(", ")}. Book now at the best price.`} />
+        <link rel="canonical" href={window.location.origin + `/rooms/${room.id}`} />
       </Helmet>
 
       <div className="grid gap-8 lg:grid-cols-[2fr_1fr]">
@@ -56,7 +56,7 @@ export default function RoomDetailPage() {
         </div>
         <aside className="h-fit rounded-lg border p-5">
           <div className="flex items-baseline justify-between">
-            <p className="text-2xl font-semibold">₹{room.pricePerNight}</p>
+            <p className="text-2xl font-semibold">${room.pricePerNight}</p>
             <span className="text-sm text-muted-foreground">per night</span>
           </div>
           <div className="mt-4">
@@ -69,7 +69,7 @@ export default function RoomDetailPage() {
             />
           </div>
           <Button asChild className="mt-4 w-full">
-            <Link to={`/booking?roomId=₹{room.id}`}>Book Now</Link>
+            <Link to={`/booking?roomId=${room.id}`}>Book Now</Link>
           </Button>
         </aside>
       </div>
