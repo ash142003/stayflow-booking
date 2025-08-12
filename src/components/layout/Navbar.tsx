@@ -32,7 +32,7 @@ export default function Navbar() {
       <nav className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <div className="h-8 w-8 rounded-md bg-gradient-to-br from-primary to-primary/60" />
-          <span className="text-lg font-semibold">StayEase</span>
+          <span className="text-lg font-semibold">ROOM BOOKING</span>
         </Link>
 
         <div className="hidden items-center gap-2 md:flex">

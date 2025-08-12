@@ -21,8 +21,8 @@ export default function ContactPage() {
   return (
     <div className="container py-8">
       <Helmet>
-        <title>Contact Us | StayEase</title>
-        <meta name="description" content="Get in touch with StayEase. Find our address, phone number, and location map." />
+        <title>Contact Us | ROOM BOOKING</title>
+        <meta name="description" content="Get in touch with ROOM BOOKING. Find our address, phone number, and location map." />
         <link rel="canonical" href={window.location.origin + "/contact"} />
       </Helmet>
       <h1 className="text-3xl font-bold">Contact</h1>
@@ -59,7 +59,7 @@ export default function ContactPage() {
         <aside className="space-y-4">
           <div className="rounded-lg border overflow-hidden">
             <iframe
-              title="StayEase Location Map"
+              title="ROOM BOOKING Location Map"
               src="https://www.google.com/maps?q=Times%20Square%2C%20New%20York&output=embed"
               className="h-[320px] w-full"
               loading="lazy"
@@ -69,7 +69,7 @@ export default function ContactPage() {
             <h2 className="text-lg font-semibold">Our Address</h2>
             <p className="mt-2 text-muted-foreground">123 Midtown Ave, New York, NY</p>
             <p className="text-muted-foreground">Phone: +1 (555) 123-4567</p>
-            <p className="text-muted-foreground">Email: hello@stayease.com</p>
+            <p className="text-muted-foreground">Email: hello@ROOM BOOKING.com</p>
           </div>
         </aside>
       </div>

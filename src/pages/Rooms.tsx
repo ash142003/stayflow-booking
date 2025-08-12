@@ -52,7 +52,7 @@ export default function RoomsPage() {
   return (
     <div className="container py-8">
       <Helmet>
-        <title>Rooms and Suites | StayEase</title>
+        <title>Rooms and Suites | ROOM BOOKING</title>
         <meta name="description" content="Browse modern rooms and suites with real-time availability and filters by price, type, and location." />
         <link rel="canonical" href={window.location.origin + "/rooms"} />
       </Helmet>

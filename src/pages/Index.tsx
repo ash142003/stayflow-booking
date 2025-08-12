@@ -9,7 +9,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>StayEase | Modern Room Booking</title>
+        <title>ROOM BOOKING | Modern Room Booking</title>
         <meta name="description" content="Book beautiful rooms and suites. Search by date, price, and amenities with real-time availability." />
         <link rel="canonical" href={window.location.origin + "/"} />
       </Helmet>

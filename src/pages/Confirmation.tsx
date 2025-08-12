@@ -9,7 +9,7 @@ export default function ConfirmationPage() {
   return (
     <div className="container py-10">
       <Helmet>
-        <title>Booking Confirmation | StayEase</title>
+        <title>Booking Confirmation | ROOM BOOKING</title>
         <meta name="description" content="Your booking is confirmed. See your reservation details and next steps." />
         <link rel="canonical" href={window.location.origin + "/confirmation"} />
       </Helmet>

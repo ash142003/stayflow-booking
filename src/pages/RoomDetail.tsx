@@ -26,7 +26,7 @@ export default function RoomDetailPage() {
   return (
     <div className="container py-8">
       <Helmet>
-        <title>{room.name} | StayEase</title>
+        <title>{room.name} | ROOM BOOKING</title>
         <meta name="description" content={`${room.name} in ${room.location}. Amenities: ${room.amenities.join(", ")}. Book now at the best price.`} />
         <link rel="canonical" href={window.location.origin + `/rooms/${room.id}`} />
       </Helmet>

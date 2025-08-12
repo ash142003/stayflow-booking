@@ -69,7 +69,7 @@ export default function BookingPage() {
   return (
     <div className="container py-8">
       <Helmet>
-        <title>Book Your Stay | StayEase</title>
+        <title>Book Your Stay | ROOM BOOKING</title>
         <meta name="description" content="Book your perfect room with secure form validation and instant pricing calculation." />
         <link rel="canonical" href={window.location.origin + "/booking"} />
       </Helmet>

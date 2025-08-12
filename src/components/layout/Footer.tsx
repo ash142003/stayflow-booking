@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="container py-10">
         <div className="grid gap-8 md:grid-cols-3">
           <div>
-            <h3 className="text-lg font-semibold">StayEase</h3>
+            <h3 className="text-lg font-semibold">ROOM BOOKING</h3>
             <p className="mt-2 text-muted-foreground">
               Modern, comfortable stays designed for your perfect trip.
             </p>
@@ -31,7 +31,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t pt-6 text-xs text-muted-foreground flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p>© {new Date().getFullYear()} StayEase. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} ROOM BOOKING. All rights reserved.</p>
           <p>
             <a className="hover:underline" href="#">Privacy Policy</a> · {" "}
             <a className="hover:underline" href="#">Terms</a>
