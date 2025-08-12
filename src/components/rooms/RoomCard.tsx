@@ -27,9 +27,9 @@ export default function RoomCard({ room }: { room: Room }) {
         <p className="text-sm text-muted-foreground mt-1">{room.location} · {room.type}</p>
         <div className="mt-3 flex items-center justify-between">
           <p className="text-base"><span className="font-semibold">${room.pricePerNight}</span> <span className="text-muted-foreground">/ night</span></p>
-          <Link to={`/booking?roomId=${room.id}`} className="inline-block">
-            <Button variant="secondary">Book</Button>
-          </Link>
+          <Button asChild variant="secondary">
+            <Link to={`/booking?roomId=${room.id}`}>Book</Link>
+          </Button>
         </div>
       </div>
     </article>

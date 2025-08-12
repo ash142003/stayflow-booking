@@ -67,8 +67,8 @@ export default function ContactPage() {
           </div>
           <div className="rounded-lg border p-6">
             <h2 className="text-lg font-semibold">Our Address</h2>
-            <p className="mt-2 text-muted-foreground">123 Midtown Ave, New York, NY</p>
-            <p className="text-muted-foreground">Phone: +1 (555) 123-4567</p>
+            <p className="mt-2 text-muted-foreground">123 Kavara Street, Koranad, Chennai, TN</p>
+            <p className="text-muted-foreground">Phone: +91 1234567890</p>
             <p className="text-muted-foreground">Email: hello@ROOM BOOKING.com</p>
           </div>
         </aside>
