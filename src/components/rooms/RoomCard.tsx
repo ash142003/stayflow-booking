@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Star } from "lucide-react";
 import { Room } from "@/data/rooms";
 import { Button } from "@/components/ui/button";
-import { formatINR } from "@/lib/utils";
+
 export default function RoomCard({ room }: { room: Room }) {
   return (
     <article className="group rounded-lg border overflow-hidden bg-card">
@@ -26,7 +26,7 @@ export default function RoomCard({ room }: { room: Room }) {
         </div>
         <p className="text-sm text-muted-foreground mt-1">{room.location} · {room.type}</p>
         <div className="mt-3 flex items-center justify-between">
-          <p className="text-base"><span className="font-semibold">{formatINR(room.pricePerNight)}</span> <span className="text-muted-foreground">/ night</span></p>
+          <p className="text-base"><span className="font-semibold">${room.pricePerNight}</span> <span className="text-muted-foreground">/ night</span></p>
           <Button asChild variant="secondary">
             <Link to={`/booking?roomId=${room.id}`}>Book</Link>
           </Button>
