@@ -72,7 +72,7 @@ export default function RoomsPage() {
                 <PopoverTrigger asChild>
                   <Button variant="outline" className={cn("w-full justify-start text-left font-normal", !(range.from && range.to) && "text-muted-foreground")}> 
                     <CalendarIcon className="mr-2 h-4 w-4"/>
-                    {range.from && range.to ? `${format(range.from, "MMM d")} - ${format(range.to, "MMM d")}` : "Select dates"}
+                    {range.from && range.to ? `₹{format(range.from, "MMM d")} - ₹{format(range.to, "MMM d")}` : "Select dates"}
                   </Button>
                 </PopoverTrigger>
                 <PopoverContent className="w-auto p-0" align="start">
@@ -94,7 +94,7 @@ export default function RoomsPage() {
               </Select>
             </div>
             <div>
-              <Label>Price range ${price[0]} - ${price[1]}</Label>
+              <Label>Price range ₹{price[0]} - ₹{price[1]}</Label>
               <Slider value={price} min={50} max={500} step={5} onValueChange={setPrice} className="mt-2" />
             </div>
             <Button asChild className="w-full">

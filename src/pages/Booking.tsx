@@ -62,7 +62,7 @@ export default function BookingPage() {
 
   function onSubmit(data: BookingFormValues) {
     const payload = { ...data, nights, baseTotal, discount, total, room: { id: room.id, name: room.name, pricePerNight: room.pricePerNight } };
-    toast({ title: "Booking created (demo)", description: `${room.name} • ${nights} nights • $${total}` });
+    toast({ title: "Booking created (demo)", description: `₹{room.name} • ₹{nights} nights • ₹₹{total}` });
     navigate("/confirmation", { state: payload });
   }
 
@@ -205,10 +205,10 @@ export default function BookingPage() {
           <h2 className="text-lg font-semibold">Pricing</h2>
           <div className="mt-3 space-y-1 text-sm">
             <p>Room: <span className="font-medium">{room.name}</span></p>
-            <p>Price per night: <span className="font-medium">${room.pricePerNight}</span></p>
+            <p>Price per night: <span className="font-medium">₹{room.pricePerNight}</span></p>
             <p>Nights: <span className="font-medium">{nights}</span></p>
-            {discount > 0 && <p>Discount: <span className="font-medium text-green-600">-${discount}</span></p>}
-            <p className="pt-2 border-t font-semibold">Total: ${total}</p>
+            {discount > 0 && <p>Discount: <span className="font-medium text-green-600">-₹{discount}</span></p>}
+            <p className="pt-2 border-t font-semibold">Total: ₹{total}</p>
           </div>
           <p className="mt-4 text-xs text-muted-foreground">This is a demo. For real bookings, we'll connect Supabase and email confirmations.</p>
         </aside>

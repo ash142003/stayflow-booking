@@ -29,7 +29,7 @@ export default function ConfirmationPage() {
           <p><span className="font-medium">Check-in:</span> {new Date(data.checkin).toDateString()}</p>
           <p><span className="font-medium">Check-out:</span> {new Date(data.checkout).toDateString()}</p>
           <p><span className="font-medium">Nights:</span> {data.nights}</p>
-          <p className="border-t pt-2"><span className="font-semibold">Total:</span> ${data.total}</p>
+          <p className="border-t pt-2"><span className="font-semibold">Total:</span> ₹{data.total}</p>
           <p className="text-xs text-muted-foreground">A confirmation email will be sent when email service is connected.</p>
           <div className="flex gap-3 pt-2">
             <Button asChild variant="secondary"><Link to="/rooms">Book another room</Link></Button>

@@ -15,7 +15,7 @@ export default function ImageGallery({ images, alt }: { images: string[]; alt: s
         <div className="flex">
           {images.map((src, i) => (
             <div className="min-w-0 flex-[0_0_100%]" key={i}>
-              <img src={src} alt={`${alt} ${i + 1}`} className="h-[320px] md:h-[420px] w-full object-cover" />
+              <img src={src} alt={`₹{alt} ₹{i + 1}`} className="h-[320px] md:h-[420px] w-full object-cover" />
             </div>
           ))}
         </div>

@@ -25,8 +25,8 @@ export default function HeroSearch() {
       const rect = el.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-      el.style.setProperty("--mx", `${x}px`);
-      el.style.setProperty("--my", `${y}px`);
+      el.style.setProperty("--mx", `₹{x}px`);
+      el.style.setProperty("--my", `₹{y}px`);
     };
     el.addEventListener("mousemove", onMove);
     return () => el.removeEventListener("mousemove", onMove);
@@ -38,7 +38,7 @@ export default function HeroSearch() {
     if (range.from) params.set("from", range.from.toISOString().slice(0, 10));
     if (range.to) params.set("to", range.to.toISOString().slice(0, 10));
     params.set("guests", String(guests));
-    navigate(`/rooms?${params.toString()}`);
+    navigate(`/rooms?₹{params.toString()}`);
   };
 
   return (
@@ -93,7 +93,7 @@ export default function HeroSearch() {
                   >
                     <CalendarIcon className="mr-2 h-4 w-4" />
                     {range.from && range.to ? (
-                      `${format(range.from, "MMM d")} - ${format(range.to, "MMM d")}`
+                      `₹{format(range.from, "MMM d")} - ₹{format(range.to, "MMM d")}`
                     ) : (
                       <span>Select dates</span>
                     )}
