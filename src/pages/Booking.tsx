@@ -35,6 +35,8 @@ export default function BookingPage() {
   const navigate = useNavigate();
   const [params] = useSearchParams();
   const initialRoomId = params.get("roomId") || rooms[0].id;
+  const [checkinOpen, setCheckinOpen] = React.useState(false);
+  const [checkoutOpen, setCheckoutOpen] = React.useState(false);
 
   const form = useForm<BookingFormValues>({
     resolver: zodResolver(BookingSchema),
@@ -110,7 +112,7 @@ export default function BookingPage() {
               <FormField name="checkin" control={form.control} render={({ field }) => (
                 <FormItem className="sm:col-span-1">
                   <FormLabel>Check-in</FormLabel>
-                  <Popover>
+                  <Popover open={checkinOpen} onOpenChange={setCheckinOpen}>
                     <PopoverTrigger asChild>
                       <Button variant="outline" className={cn("w-full justify-start text-left font-normal", !field.value && "text-muted-foreground")}> 
                         <CalendarIcon className="mr-2 h-4 w-4"/>
@@ -118,7 +120,16 @@ export default function BookingPage() {
                       </Button>
                     </PopoverTrigger>
                     <PopoverContent className="w-auto p-0" align="start">
-                      <Calendar mode="single" selected={field.value} onSelect={field.onChange} className={cn("p-3 pointer-events-auto")} initialFocus />
+                      <Calendar 
+                        mode="single" 
+                        selected={field.value} 
+                        onSelect={(date) => {
+                          field.onChange(date);
+                          setCheckinOpen(false);
+                        }} 
+                        className={cn("p-3 pointer-events-auto")} 
+                        initialFocus 
+                      />
                     </PopoverContent>
                   </Popover>
                   <FormMessage />
@@ -128,7 +139,7 @@ export default function BookingPage() {
               <FormField name="checkout" control={form.control} render={({ field }) => (
                 <FormItem className="sm:col-span-1">
                   <FormLabel>Check-out</FormLabel>
-                  <Popover>
+                  <Popover open={checkoutOpen} onOpenChange={setCheckoutOpen}>
                     <PopoverTrigger asChild>
                       <Button variant="outline" className={cn("w-full justify-start text-left font-normal", !field.value && "text-muted-foreground")}> 
                         <CalendarIcon className="mr-2 h-4 w-4"/>
@@ -136,7 +147,17 @@ export default function BookingPage() {
                       </Button>
                     </PopoverTrigger>
                     <PopoverContent className="w-auto p-0" align="start">
-                      <Calendar mode="single" selected={field.value} onSelect={field.onChange} disabled={(date) => (values.checkin ? date < values.checkin : false)} className={cn("p-3 pointer-events-auto")} initialFocus />
+                      <Calendar 
+                        mode="single" 
+                        selected={field.value} 
+                        onSelect={(date) => {
+                          field.onChange(date);
+                          setCheckoutOpen(false);
+                        }} 
+                        disabled={(date) => (values.checkin ? date < values.checkin : false)} 
+                        className={cn("p-3 pointer-events-auto")} 
+                        initialFocus 
+                      />
                     </PopoverContent>
                   </Popover>
                   <FormMessage />
