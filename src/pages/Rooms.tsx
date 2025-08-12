@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { CalendarIcon } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, formatINR } from "@/lib/utils";
 import { format } from "date-fns";
 
 interface DateRange { from?: Date; to?: Date }
@@ -94,7 +94,7 @@ export default function RoomsPage() {
               </Select>
             </div>
             <div>
-              <Label>Price range ${price[0]} - ${price[1]}</Label>
+              <Label>Price range {formatINR(price[0])} - {formatINR(price[1])}</Label>
               <Slider value={price} min={50} max={500} step={5} onValueChange={setPrice} className="mt-2" />
             </div>
             <Button asChild className="w-full">

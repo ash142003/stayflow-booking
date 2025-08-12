@@ -1,6 +1,7 @@
 import { useLocation, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
+import { formatINR } from "@/lib/utils";
 
 export default function ConfirmationPage() {
   const { state } = useLocation() as { state?: any };
@@ -29,7 +30,7 @@ export default function ConfirmationPage() {
           <p><span className="font-medium">Check-in:</span> {new Date(data.checkin).toDateString()}</p>
           <p><span className="font-medium">Check-out:</span> {new Date(data.checkout).toDateString()}</p>
           <p><span className="font-medium">Nights:</span> {data.nights}</p>
-          <p className="border-t pt-2"><span className="font-semibold">Total:</span> ${data.total}</p>
+          <p className="border-t pt-2"><span className="font-semibold">Total:</span> {formatINR(data.total)}</p>
           <p className="text-xs text-muted-foreground">A confirmation email will be sent when email service is connected.</p>
           <div className="flex gap-3 pt-2">
             <Button asChild variant="secondary"><Link to="/rooms">Book another room</Link></Button>

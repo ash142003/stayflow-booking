@@ -5,7 +5,7 @@ import ImageGallery from "@/components/rooms/ImageGallery";
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 import { Check, Wifi, Tv, Coffee } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, formatINR } from "@/lib/utils";
 
 export default function RoomDetailPage() {
   const { id } = useParams();
@@ -56,7 +56,7 @@ export default function RoomDetailPage() {
         </div>
         <aside className="h-fit rounded-lg border p-5">
           <div className="flex items-baseline justify-between">
-            <p className="text-2xl font-semibold">${room.pricePerNight}</p>
+            <p className="text-2xl font-semibold">{formatINR(room.pricePerNight)}</p>
             <span className="text-sm text-muted-foreground">per night</span>
           </div>
           <div className="mt-4">
