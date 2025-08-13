@@ -1,6 +1,8 @@
+// src/components/home/HeroSearch.tsx
+
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { CalendarIcon, MapPin, Users } from "lucide-react";
+import { CalendarIcon, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
@@ -9,11 +11,17 @@ import { cn } from "@/lib/utils";
 import { format } from "date-fns";
 import hero from "@/assets/hero.jpg";
 
-interface DateRange { from?: Date; to?: Date }
+interface DateRange {
+  from?: Date;
+  to?: Date;
+}
 
-export default function HeroSearch() {
+interface HeroSearchProps {
+  hideLocation?: boolean; // ✅ Added prop
+}
+
+export default function HeroSearch({ hideLocation }: HeroSearchProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [location, setLocation] = useState("");
   const [guests, setGuests] = useState(1);
   const [range, setRange] = useState<DateRange>({});
   const navigate = useNavigate();
@@ -34,7 +42,6 @@ export default function HeroSearch() {
 
   const onSearch = () => {
     const params = new URLSearchParams();
-    if (location) params.set("location", location);
     if (range.from) params.set("from", range.from.toISOString().slice(0, 10));
     if (range.to) params.set("to", range.to.toISOString().slice(0, 10));
     params.set("guests", String(guests));
@@ -51,7 +58,8 @@ export default function HeroSearch() {
         backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0 pointer-events-none"
+      <div
+        className="absolute inset-0 pointer-events-none"
         style={{
           background: `radial-gradient(600px 200px at var(--mx,50%) var(--my,30%), hsl(var(--primary)/.25), transparent 60%)`,
         }}
@@ -67,20 +75,20 @@ export default function HeroSearch() {
         </div>
 
         <div className="mx-auto mt-8 w-full max-w-4xl rounded-xl border bg-background/80 backdrop-blur p-3 md:p-4">
-          <div className="grid grid-cols-1 gap-3 md:grid-cols-5">
-            <div className="md:col-span-2">
-              <label className="text-sm font-medium">Location</label>
-              <div className="mt-1 flex items-center gap-2 rounded-md border px-3">
-                <MapPin className="h-4 w-4 text-muted-foreground" />
-                <Input
-                  value={location}
-                  onChange={(e) => setLocation(e.target.value)}
-                  placeholder="City or area"
-                  className="border-0 focus-visible:ring-0"
-                />
+          <div className={`grid gap-3 ${hideLocation ? "md:grid-cols-3" : "md:grid-cols-5"}`}>
+            {!hideLocation && (
+              <div className="md:col-span-2">
+                <label className="text-sm font-medium">Location</label>
+                <div className="mt-1 flex items-center gap-2 rounded-md border px-3">
+                  <Input
+                    placeholder="City or area"
+                    className="border-0 focus-visible:ring-0"
+                  />
+                </div>
               </div>
-            </div>
-            <div className="md:col-span-2">
+            )}
+
+            <div className={hideLocation ? "md:col-span-2" : "md:col-span-2"}>
               <label className="text-sm font-medium">Dates</label>
               <Popover>
                 <PopoverTrigger asChild>
@@ -111,6 +119,7 @@ export default function HeroSearch() {
                 </PopoverContent>
               </Popover>
             </div>
+
             <div className="md:col-span-1">
               <label className="text-sm font-medium">Guests</label>
               <div className="mt-1 flex items-center gap-2 rounded-md border px-3">
@@ -126,7 +135,9 @@ export default function HeroSearch() {
             </div>
           </div>
           <div className="mt-3 flex justify-end">
-            <Button size="lg" onClick={onSearch}>Search</Button>
+            <Button size="lg" onClick={onSearch}>
+              Search
+            </Button>
           </div>
         </div>
       </div>
