@@ -9,10 +9,10 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Helmet>
-        <title>Sunny Hotel | Modern Room Booking in Mumbai</title>
+        <title>Sunny Hotel | Modern Room Booking in Munnar</title>
         <meta
           name="description"
-          content="Book beautiful rooms at Sunny Hotel in Mumbai. Check availability by date and amenities with real-time updates."
+          content="Book beautiful rooms at Sunny Hotel in Munnar. Check availability by date and amenities with real-time updates."
         />
         <link
           rel="canonical"
@@ -27,7 +27,7 @@ const Index = () => {
             Welcome to Sunny Hotel
           </h1>
           <p className="mt-2 text-lg text-gray-600">
-            Your Premier Stay in Mumbai
+            Your Premier Stay in Munnar
           </p>
         </div>
 
